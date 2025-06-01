@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vocab Vortex: Spin Words, Conquer C2!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header-container">
+        <h1>The Vocab Vortex: Spin Words, Conquer C2!</h1>
 
+        <div class="credit-line">
+            Created by Panagiotis Domvros 2025 (CC BY-NC)<br>
+            <strong>English Teacher – Teacher Trainer</strong><br>
+            Principal of 1st Middle School of Pylea
+        </div>
+
+        <img src="teacher.png" alt="Teacher Avatar" class="teacher-image">
+
+        <img src="teacher_watching_text.png"
+             alt="Your Teacher is Watching Your Every Move!!!"
+             class="watching-text-image">
+    </div>
+
+    <div id="gameScreen" class="screen">
+        <div class="main-game-area">
+            <h2 id="exerciseTitle"></h2>
+            <div class="instructions-box">
+                <p>For questions 1-8, read the text below and decide which answer (A, B, C or D) best fits each gap. Mark your answers on the separate answer sheet.</p>
+                <p>There is an example at the beginning (0).</p>
+                <div class="example-section hidden">
+                    <p>0: <span id="exampleAnswerText"></span></p>
+                    <div id="exampleOptions" class="options-grid">
+                    </div>
+                    <div id="exampleAnswerDisplay" class="example-answer-feedback"></div>
+                </div>
+            </div>
+
+            <div class="exercise-text-container" id="exerciseTextContainer">
+            </div>
+
+            <div class="questions-options-container" id="questionsOptionsContainer">
+            </div>
+
+            <div class="game-controls">
+                <button id="glossaryBtn" class="control-btn" onclick="window.open('https://pdomvros-edu.github.io/vocab-vortex1-glossary/', '_blank')">Cheat!</button>
+                <button id="checkAnswersBtn" class="control-btn">Check Answers</button>
+                <button id="nextExerciseBtn" class="control-btn">Next Exercise</button>
+            </div>
+
+            <div class="feedback-message" id="exerciseFeedback"></div>
+            <div class="score-display" id="scoreDisplay">
+                Score: <span id="currentScore">0</span> | Exercises Completed: <span id="exercisesCompleted">0</span> / <span id="totalExercises">0</span>
+            </div>
+
+            <div id="dictionaryContainer" class="word-lookup-section">
+                <h3>Online Dictionary Lookup</h3>
+                <p class="lookup-instruction">Type a word to search an external dictionary (e.g., Merriam-Webster).</p>
+                <input type="text" id="externalWordLookupInput" placeholder="Enter word to look up" />
+                <button id="searchExternalDictionaryBtn" class="small-btn">Search Dictionary</button>
+                <br><br>
+                <iframe id="dictionaryIframe" src="about:blank" width="100%" height="400px" frameborder="0" style="border: 1px solid #ccc; background-color: #f0f0f0;"></iframe>
+            </div>
+            </div>
+
+        <div class="sidebar">
+            <h2>Exercise Progress</h2>
+            <ul class="exercise-progress-list" id="exerciseProgressList">
+            </ul>
+        </div>
+    </div>
+
+    <audio id="failSound" src="fail-sound.mp3" preload="auto"></audio>
+    <audio id="successSound" src="success-sound.mpuald="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
