@@ -18,25 +18,21 @@ body {
     padding: 20px 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    position: relative;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
+    justify-content: center;
 }
 
 .header-container h1 {
     font-size: 2.8em;
-    margin: 20px 0;
+    margin-bottom: 10px;
     color: #ecf0f1;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    display: inline-block;
-    vertical-align: middle;
-}
-.header-container {
-    padding-top: 130px; /* Add space for the top images */
 }
 
 .credit-line {
@@ -44,46 +40,31 @@ body {
     color: #bdc3c7;
     margin-top: 15px;
     line-height: 1.5;
-    text-align: center;
 }
 
 .credit-line strong {
     color: #fff;
 }
 
-.teacher-image,
-.watching-text-image {
-    height: 100px;
-    border-radius: 50%;
-    border: 3px solid #3498db;
-    background-color: #ecf0f1;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    display: inline-block;
-    vertical-align: middle;
-}
-
 .teacher-image {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    height: 100px;
+    top: 10px;
+    left: 40px;
+    height: 100px; /* Adjust size as needed */
     border-radius: 50%;
     border: 3px solid #3498db;
-    background-color: #ecf0f1;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 10;
+    background-color: #ecf0f1; /* Background to prevent dark outline */
+    z-index: 10; /* Ensure it's above other elements if they overlap */
 }
 
 .watching-text-image {
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 20px;
-    height: 100px;
-    border-radius: 50%;
-    border: 3px solid #3498db;
-    background-color: #ecf0f1;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 10;
+    height: 120px; /* Adjust size as needed */
+    /* No background-color here, relying on PNG transparency */
+    z-index: 10; /* Ensure it's above other elements if they overlap */
 }
 
 .screen {
@@ -98,7 +79,7 @@ body {
 }
 
 .main-game-area {
-    flex: 3;
+    flex: 3; /* Takes up more space */
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -106,7 +87,7 @@ body {
 }
 
 .sidebar {
-    flex: 1;
+    flex: 1; /* Takes less space */
     background-color: #ecf0f1;
     padding: 30px;
     border-left: 1px solid #ddd;
@@ -132,7 +113,7 @@ body {
     color: #555;
     display: flex;
     align-items: center;
-    cursor: pointer;
+    cursor: pointer; /* Make list items clickable */
     transition: background-color 0.2s ease;
 }
 
@@ -141,7 +122,7 @@ body {
 }
 
 .exercise-progress-list li.completed-correctly {
-    color: #27ae60;
+    color: #27ae60; /* Green for perfect completion */
     font-weight: bold;
 }
 
@@ -153,7 +134,7 @@ body {
 }
 
 .exercise-progress-list li.completed-incorrectly {
-    color: #e74c3c;
+    color: #e74c3c; /* Red for mistakes */
     font-weight: bold;
 }
 
@@ -163,6 +144,7 @@ body {
     color: #e74c3c;
     font-size: 1.2em;
 }
+
 
 .exercise-progress-list li.current-exercise {
     color: #3498db;
@@ -180,6 +162,7 @@ body {
     color: #3498db;
     font-size: 0.9em;
 }
+
 
 #exerciseTitle {
     font-size: 2em;
@@ -216,14 +199,15 @@ body {
     margin-bottom: 10px;
 }
 
+/* Example options styling */
 .example-section .options-grid .option-button {
-    background-color: #cce7ee;
+    background-color: #cce7ee; /* Lighter background for example options */
     border: 1px solid #a8d5e0;
-    cursor: default;
+    cursor: default; /* Not clickable */
 }
 
 .example-section .options-grid .option-button.correct-answer {
-    background-color: #d4edda;
+    background-color: #d4edda; /* Light green */
     border: 1px solid #28a745;
     color: #155724;
 }
@@ -242,12 +226,12 @@ body {
 }
 
 .blank-container {
-    display: inline-flex;
+    display: inline-flex; /* Use flex to align blank and correct answer text */
     flex-direction: column;
-    align-items: center;
-    min-width: 80px;
-    vertical-align: bottom;
-    margin: 0 5px;
+    align-items: center; /* Center the letter/word in the blank area */
+    min-width: 80px; /* Ensure space for the blank */
+    vertical-align: bottom; /* Align with text baseline */
+    margin: 0 5px; /* Spacing around the blank */
 }
 
 .blank {
@@ -259,38 +243,41 @@ body {
     padding: 0 5px;
     text-align: center;
     vertical-align: bottom;
-    color: #333;
+    color: #333; /* Make text visible when an answer is placed */
     font-weight: bold;
     transition: all 0.2s ease-in-out;
-    box-sizing: border-box;
-    display: flex;
+    box-sizing: border-box; /* Include padding and border in width/height */
+    display: flex; /* Allow content to center */
     justify-content: center;
     align-items: center;
 }
 
 .blank.selected {
-    border-bottom-color: #3498db;
+    border-bottom-color: #3498db; /* Highlight selected blank */
     background-color: #e0f2f7;
 }
 
-.blank.correct-answer-text {
-    color: #2ecc71;
+.blank.correct-answer-text { /* This class applies to the span *inside* the blank-container when correct */
+    color: #2ecc71; /* Green color for correct answer letter in blank */
     border-bottom-color: #2ecc71;
 }
 
-.blank.incorrect-blank-text {
-    color: #e74c3c;
+.blank.incorrect-blank-text { /* This class applies to the span *inside* the blank-container when incorrect */
+    color: #e74c3c; /* Red color for incorrect answer letter in blank */
     border-bottom-color: #e74c3c;
 }
 
+
+/* Style for the correct answer text displayed below the blank */
 .correct-answer-display {
-    color: #2ecc71;
+    color: #2ecc71; /* Green for the displayed correct answer */
     font-size: 0.8em;
     font-weight: bold;
     margin-top: 2px;
-    display: block;
-    white-space: nowrap;
+    display: block; /* Ensure it's on its own line */
+    white-space: nowrap; /* Prevent wrapping for letter like (A) */
 }
+
 
 .questions-options-container {
     display: flex;
@@ -304,7 +291,7 @@ body {
     border-radius: 8px;
     padding: 15px;
     background-color: #fdfdfd;
-    width: calc(50% - 10px);
+    width: calc(50% - 10px); /* Two columns */
     box-sizing: border-box;
 }
 
@@ -321,7 +308,7 @@ body {
     gap: 10px;
 }
 
-.option-button {
+.option-button { /* General button style */
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     padding: 10px 15px;
@@ -330,9 +317,9 @@ body {
     font-size: 0.95em;
     text-align: left;
     transition: background-color 0.2s, border-color 0.2s;
-    white-space: nowrap;
+    white-space: nowrap; /* Prevent options from wrapping */
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; /* Add ellipsis if text is too long */
 }
 
 .option-button:hover {
@@ -347,17 +334,17 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.option-button.correct {
+.option-button.correct { /* For the correct option button after checking */
     background-color: #2ecc71;
     color: white;
     border-color: #27ae60;
 }
 
-.option-button.incorrect {
+.option-button.incorrect { /* For the user's selected INCORRECT option button after checking */
     background-color: #e74c3c;
     color: white;
     border-color: #c0392b;
-    text-decoration: line-through;
+    text-decoration: line-through; /* Add strikethrough for incorrect selection */
 }
 
 .option-button:disabled {
@@ -397,7 +384,8 @@ body {
 
 #nextExerciseBtn {
     background-color: #3498db;
-    display: block !important;
+    /* Added this rule to ensure it's always visible */
+    display: block !important; /* Force visibility even if 'hidden' class or JS tries to hide it */
 }
 
 #nextExerciseBtn:hover {
@@ -411,11 +399,11 @@ body {
     font-size: 1.1em;
     font-weight: bold;
     min-height: 30px;
-    color: #e74c3c;
+    color: #e74c3c; /* Default to warning color (red) */
 }
 
 .feedback-message.success {
-    color: #27ae60;
+    color: #27ae60; /* Green for success */
 }
 
 .score-display {
@@ -426,14 +414,15 @@ body {
     font-weight: bold;
 }
 
-.word-lookup-section {
+/* Updated styles for the new external dictionary section */
+.word-lookup-section { /* Reusing this class name for the container */
     background-color: #f9f9f9;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 20px;
     margin-top: 30px;
     box-shadow: inset 0 0 10px rgba(0,0,0,0.03);
-    text-align: center;
+    text-align: center; /* Center the input and button */
 }
 
 .word-lookup-section h3 {
@@ -451,19 +440,20 @@ body {
     margin-bottom: 15px;
 }
 
-#externalWordLookupInput {
-    width: calc(100% - 150px);
+/* Styles for the new external dictionary input and button */
+#externalWordLookupInput { /* Changed from #wordLookupInput */
+    width: calc(100% - 150px); /* Adjust width to make space for button */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
     box-sizing: border-box;
-    margin-right: 10px;
-    display: inline-block;
+    margin-right: 10px; /* Space between input and button */
+    display: inline-block; /* Align with button */
     vertical-align: middle;
 }
 
-#searchExternalDictionaryBtn {
+#searchExternalDictionaryBtn { /* Changed from #lookupWordBtn */
     padding: 10px 15px;
     font-size: 1em;
     border-radius: 5px;
@@ -479,52 +469,62 @@ body {
     background-color: #2980b9;
 }
 
-#dictionaryIframe {
+#dictionaryIframe { /* Styling for the iframe */
     width: 100%;
-    height: 400px;
+    height: 400px; /* You can adjust this height */
     border: 1px solid #cce7ee;
     border-radius: 8px;
     margin-top: 20px;
-    background-color: #fff;
+    background-color: #fff; /* Ensure iframe has a background */
 }
 
+/* Removed old .word-details-display and its child styles as they are no longer needed */
+
+
+/* Utility classes */
+/* Keep this hidden class if you use it for other elements, but it will NOT affect #nextExerciseBtn anymore */
 .hidden {
     display: none;
 }
-
 .red-text {
     color: red;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .screen {
-        flex-direction: column;
+        flex-direction: column; /* Stack main game area and sidebar on smaller screens */
     }
 
     .main-game-area, .sidebar {
-        flex: none;
-        width: 100%;
+        flex: none; /* Remove flex sizing */
+        width: 100%; /* Take full width */
         padding: 20px;
     }
 
     .sidebar {
         border-left: none;
-        border-top: 1px solid #ddd;
+        border-top: 1px solid #ddd; /* Add top border instead of left */
     }
 
     .question-block {
-        width: 100%;
+        width: 100%; /* Full width for questions */
     }
 
     .header-container {
         padding: 15px 20px;
     }
 
-    .teacher-image,
-    .watching-text-image {
-        display: block;
-        margin: 10px auto;
+    .teacher-image {
+        position: static; /* Remove absolute positioning */
+        margin-top: 10px;
         height: 80px;
+    }
+
+    .watching-text-image {
+        position: static; /* Remove absolute positioning */
+        margin-top: 10px;
+        height: 100px;
     }
 
     .header-container h1 {
@@ -535,13 +535,13 @@ body {
         font-size: 0.8em;
     }
 
-    #externalWordLookupInput {
-        width: calc(100% - 130px);
-        margin-right: 5px;
+    #externalWordLookupInput { /* Adjusted for new ID */
+        width: calc(100% - 130px); /* Adjust width for smaller screens, leave space for button */
+        margin-right: 5px; /* Adjust margin */
     }
 
-    #searchExternalDictionaryBtn {
-        padding: 10px 10px;
+    #searchExternalDictionaryBtn { /* Adjusted for new ID */
+        padding: 10px 10px; /* Slightly smaller padding for button */
         font-size: 0.9em;
     }
 }
