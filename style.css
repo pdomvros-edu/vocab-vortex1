@@ -35,6 +35,9 @@ body {
     display: inline-block;
     vertical-align: middle;
 }
+.header-container {
+    padding-top: 130px; /* Add space for the top images */
+}
 
 .credit-line {
     font-size: 0.9em;
@@ -60,11 +63,27 @@ body {
 }
 
 .teacher-image {
-    margin-top: 10px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #3498db;
+    background-color: #ecf0f1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
 }
 
 .watching-text-image {
-    margin-top: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #3498db;
+    background-color: #ecf0f1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
 }
 
 .screen {
